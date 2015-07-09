@@ -157,7 +157,6 @@
     <Compile Include="BL\Charts\ChartsBO.cs" />
     <Compile Include="BL\DailyStatement\DailyStatementBO.cs" />
     <Compile Include="BL\Definitions\MatchSettlementStatus.cs" />
-    <Compile Include="BL\Definitions\SCResult.cs" />
     <Compile Include="BL\Definitions\SportType.cs" />
     <Compile Include="BL\GivenCredit\GivenCreditBO.cs" />
     <Compile Include="BL\MemberInfo\CustomerList\CustomerListBO.cs" />
@@ -192,7 +191,6 @@
     <Compile Include="Entities\DailyStatementEntity.cs" />
     <Compile Include="Entities\ExtObject.cs" />
     <Compile Include="Entities\IExtObject.cs" />
-    <Compile Include="Entities\PageAccess.cs" />
     <Compile Include="Entities\SubAccount.cs" />
     <Compile Include="Security\HttpFrequenceRule.cs" />
     <Compile Include="Services\DeviceService.cs" />
@@ -240,10 +238,7 @@
     <Compile Include="DL\Base\DAOBase.cs" />
     <Compile Include="DL\DataException\DataException.cs" />
     <Compile Include="DL\Definitions\DbTypes.cs" />
-    <Compile Include="Entities\IUserSession.cs" />
     <Compile Include="Entities\Permission\UserPermission.cs" />
-    <Compile Include="Entities\UserSession.cs" />
-    <Compile Include="Entities\UserSessionBase.cs" />
     <Compile Include="Entities\_Base\IEntity.cs" />
     <Compile Include="Entities\_Base\_Extension.cs" />
   </ItemGroup>
@@ -265,6 +260,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\MicroServices\Legacy\Fanex.Alpha.MicroServices.LegacyModel\Fanex.Alpha.MicroServices.LegacyModel.csproj">
+      <Project>{208A66FE-31E4-4C28-9C4B-DF4ED8FE77FE}</Project>
+      <Name>Fanex.Alpha.MicroServices.LegacyModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MicroServices\Legacy\Fanex.Alpha.MicroServices.LegacySession\Fanex.Alpha.MicroServices.LegacySession.csproj">
+      <Project>{65FC3610-6324-4E80-8A27-61134D711EBD}</Project>
+      <Name>Fanex.Alpha.MicroServices.LegacySession</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sunplus.Agent.Utilities\Sunplus.Agent.Utilities.csproj">
       <Project>{016F274C-1F76-450B-B80D-E7FB59BE6A2B}</Project>
       <Name>Sunplus.Agent.Utilities</Name>

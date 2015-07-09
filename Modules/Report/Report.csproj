@@ -335,6 +335,14 @@
       <Project>{016F274C-1F76-450B-B80D-E7FB59BE6A2B}</Project>
       <Name>Sunplus.Agent.Utilities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\MicroServices\Legacy\Fanex.Alpha.MicroServices.LegacyModel\Fanex.Alpha.MicroServices.LegacyModel.csproj">
+      <Project>{208A66FE-31E4-4C28-9C4B-DF4ED8FE77FE}</Project>
+      <Name>Fanex.Alpha.MicroServices.LegacyModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MicroServices\Legacy\Fanex.Alpha.MicroServices.LegacySession\Fanex.Alpha.MicroServices.LegacySession.csproj">
+      <Project>{65FC3610-6324-4E80-8A27-61134D711EBD}</Project>
+      <Name>Fanex.Alpha.MicroServices.LegacySession</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common\_Common.csproj">
       <Project>{9503B9B7-DAE3-41CC-905C-F1B27B64E0DD}</Project>
       <Name>_Common</Name>

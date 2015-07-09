@@ -183,6 +183,14 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\MicroServices\Legacy\Fanex.Alpha.MicroServices.LegacyModel\Fanex.Alpha.MicroServices.LegacyModel.csproj">
+      <Project>{208A66FE-31E4-4C28-9C4B-DF4ED8FE77FE}</Project>
+      <Name>Fanex.Alpha.MicroServices.LegacyModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MicroServices\Legacy\Fanex.Alpha.MicroServices.LegacySession\Fanex.Alpha.MicroServices.LegacySession.csproj">
+      <Project>{65FC3610-6324-4E80-8A27-61134D711EBD}</Project>
+      <Name>Fanex.Alpha.MicroServices.LegacySession</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sunplus.Agent.Model\Sunplus.Agent.Model.csproj">
       <Project>{8831EE6F-7EF9-48F3-9DA2-82C6C5EB6E47}</Project>
       <Name>Sunplus.Agent.Model</Name>

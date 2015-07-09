@@ -18,16 +18,6 @@ namespace Sunplus.Agent.Model.BL.Definitions
     using System.Web;
     using System.Collections.Generic;
 
-    public enum UserTypes : int
-    {
-        Admin = 5,
-        Super = 4,
-        Master = 3,
-        Agent = 2,
-        Member = 1,
-        Unknown = 0
-    }
-
     public enum ServerIds : int
     {
         Unknown = -1,

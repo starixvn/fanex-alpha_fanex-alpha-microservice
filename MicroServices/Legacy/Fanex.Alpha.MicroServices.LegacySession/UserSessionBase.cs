@@ -8,6 +8,7 @@ namespace Sunplus.Agent.Model.Entities
     using System.Reflection;
     using System.Runtime.Serialization;
     using System.Web;
+    using Sunplus.Agent.Model.BL.Definitions;
 
     [Serializable]
     public class UserSessionBase : IUserSession, IDisposable
@@ -97,6 +98,9 @@ namespace Sunplus.Agent.Model.Entities
 
         private const string ISHIDEKENO = "ISHIDEKENO";
 
+        private const string ISHIDEGOLDDELUXE = "ISHIDEGOLDDELUXE";
+        private const string DISABLEGOLDDELUXE = "DISABLEGOLDDELUXE";
+
         private const string ISLIMITHOSTPERMISSIONONSUBACCOUNTFUNCTION = "ISLIMITHOSTPERMISSIONONSUBACCOUNTFUNCTION";
 
         private const string ISDISABLEDESPORTS = "ISDISABLEDESPORTS";
@@ -119,6 +123,16 @@ namespace Sunplus.Agent.Model.Entities
         public UserSessionBase(string netSessionId)
         {
             this.asNetSessionId = netSessionId;
+        }
+
+        public enum UserTypes : int
+        {
+            Admin = 5,
+            Super = 4,
+            Master = 3,
+            Agent = 2,
+            Member = 1,
+            Unknown = 0
         }
 
         public string Language
@@ -980,6 +994,35 @@ namespace Sunplus.Agent.Model.Entities
         }
         #endregion
 
+        #region GoldDeluxe
+        public bool IsHideGoldDeluxe
+        {
+            get
+            {
+                object value = this.GetProperty(ISHIDEGOLDDELUXE);
+                return (null == value) ? false : (bool)value;
+            }
+
+            set
+            {
+                this.SetProperty(ISHIDEGOLDDELUXE, value);
+            }
+        }
+
+        public bool DisableGoldDeluxe
+        {
+            get
+            {
+                object value = this.GetProperty(DISABLEGOLDDELUXE);
+                return (null == value) ? false : (bool)value;
+            }
+
+            set
+            {
+                this.SetProperty(DISABLEGOLDDELUXE, value);
+            }
+        }
+        #endregion
         #region Bingo
 
         /// <summary>

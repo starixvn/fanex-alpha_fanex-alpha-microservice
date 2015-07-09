@@ -5,6 +5,7 @@ namespace Sunplus.Agent.Model.Entities
     using System;
     using System.Globalization;
     using System.Runtime.Serialization;
+    using Sunplus.Agent.Model.BL.Definitions;
 
     public interface IUserSession : ISerializable
     {
@@ -404,6 +405,16 @@ namespace Sunplus.Agent.Model.Entities
             get;
             set;
         }
+        #endregion
+
+        #region GoldDeluxe
+        bool IsHideGoldDeluxe
+        {
+            get;
+            set;
+        }
+
+        bool DisableGoldDeluxe { get; set; }
         #endregion
 
         #region Double Commission
