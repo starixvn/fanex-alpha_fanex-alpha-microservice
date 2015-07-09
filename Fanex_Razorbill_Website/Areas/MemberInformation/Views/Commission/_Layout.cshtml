@@ -1,0 +1,100 @@
+﻿@using Sunplus.Agent.Model.Entities.Permission;
+@using Fanex.Razorbill.Module.MemberInformation.Resources;
+@using Fanex.Razorbill.Module.Common.Enums;
+@using Fanex.Razorbill.Module.Common.Services;
+@{ 
+    var userRole = CookielessSession.LoggedInRole;
+    string actionName = ViewContext.RouteData.GetRequiredString("action");
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <title>@Resources.Lang.lblMemberCommission</title>
+    @Styles.Render("~/_GlobalResources/Css/MemberInformationAgent",
+        "~/_Reports/Resources/MemberInformationReports",
+        "~/Areas/MemberInformation/Views/Commission/Styles/Css")
+    @RenderSection("style", false)
+</head>
+<body>
+    <div id="page_main">
+        <div id="header_main">@Resources.Lang.lblMemberCommission</div>
+        <div class="body_main">
+            <div id="box_header">
+                <div class="column paddingLeft6">
+                    <input type="radio" id="radSB" name="rdCommission" value="@Resources.Lang.sportBook"
+                        onclick="age.DelayReloadPage('@Url.Content("~/_MemberInfo/Commission/MemberCommissionSportbook.aspx")', 1)"/>
+                    <label for="radSB">@Resources.Lang.sportBook</label> &nbsp;&nbsp;
+                    @if (UserPermission.IsShowRacing)
+                    {    
+                        <input type="radio" id="radRacing" name="rdCommission" value="@Resources.Lang.Racebook"
+                            onclick="age.DelayReloadPage('@Url.Content("~/_MemberInfo/Commission/MemberCommissionRacing.aspx")', 1)"/>
+                        <label for="radRacing">@Resources.Lang.Racebook</label> @:&nbsp;&nbsp;
+                    }
+                    @if (UserPermission.IsShowCasino)
+                    {    
+                        <input type="radio" id="radCasino" name="rdCommission" value="@Resources.Lang.casino"
+                            onclick="age.DelayReloadPage('@Url.Content("~/_MemberInfo/Commission/MemberCommissionCasino.aspx")', 1)"/>
+                        <label for="radCasino">@Resources.Lang.casino</label> @:&nbsp;&nbsp;
+                    }
+                    @if (UserPermission.IsShowBingo && !Sunplus.Agent.Model.BL.Definitions.AppSettings.DisabledBingoCommission)
+                    {   
+                        <input type="radio" id="radBingo" name="rdCommission" value="@Resources.Lang.bingo"
+                            onclick="age.DelayReloadPage('@Url.Content("~/MemberInfo/MemberCommissionBingo.aspx")', 1)"/>
+                        <label for="radBingo">@Resources.Lang.bingo</label> @:&nbsp;&nbsp;
+                    } 
+                    @if (UserPermission.IsShowP2P)
+                    {   
+                        <input type="radio" id="radP2P" name="rdCommission" value="@Resources.Lang.P2P"
+                            onclick="age.DelayReloadPage('@Url.Content("~/_MemberInfo/Commission/MemberCommissionP2P.aspx")', 1)"/>
+                        <label for="radP2P">@Resources.Lang.P2P</label> @:&nbsp;&nbsp;
+                    } 
+                    @if (UserPermission.IsShowLiveCasino)
+                    {    
+                        <input type="radio" id="radLiveCasino" name="rdCommission" value="@Resources.Lang.LiveCasino"
+                            onclick="age.DelayReloadPage('@Url.Content("~/_MemberInfo/Commission/MemberCommissionLiveCasino.aspx")', 1)"/>
+                        <label for="radLiveCasino">@Resources.Lang.LiveCasino</label> @:&nbsp;&nbsp;
+                    }
+                    @if (UserPermission.IsShowGoldDeluxeSettingForCredit)
+                    {    
+                        <input type="radio" id="radGoldDeluxe" name="rdCommission" value="@Resources.Lang.GoldDeluxe"
+                            checked="@(string.Equals(actionName, "GoldDeluxe", StringComparison.OrdinalIgnoreCase) ? "checked" : string.Empty)"
+                            onclick="age.DelayReloadPage('@Url.Content("~/MemberInformation/Commission/GoldDeluxe")', 1)"/>
+                        <label for="radGoldDeluxe">@Resources.Lang.GoldDeluxe</label> @:&nbsp;&nbsp;
+                    }
+                </div>
+                @if (userRole == LoggedInUserRole.Super)
+                {
+                    <div class="column r">@Resources.Lang.selectmaster</div>
+                    <div class="column">
+                        @Html.DropDownList("MasterList", new SelectList(Model.MasterList, "Id", "Name"))
+                    </div>
+                }
+                @if (userRole == LoggedInUserRole.Super || userRole == LoggedInUserRole.Master)
+                {
+                    <div class="column r">@Resources.Lang.selectagent</div>
+                    <div class="column">
+                        @Html.DropDownList("AgentList", new SelectList(Model.AgentList, "Id", "Name"))
+                    </div>
+                }
+                <div class="column r">
+                    <a id="iconBettypesRef" class="infoIco" href="javascript:;" title="@Resources.Lang.tooltipCommission"></a>
+                </div>
+            </div>
+            @RenderBody()
+        </div>
+    </div>
+    <script type="text/javascript">
+        var rootUrl = '@Url.Content("~")';
+    </script>
+    <script src="@Url.Content("~/Scripts/_Libs/jQuery/jquery-1.8.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/_Components/AGEWnd/AGEWnd.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Areas/MemberInformation/Views/Commission/GoldDeluxe/Scripts/Core.js")" type="text/javascript"></script>
+    @RenderSection("script", false)
+</body>
+</html>
+
+

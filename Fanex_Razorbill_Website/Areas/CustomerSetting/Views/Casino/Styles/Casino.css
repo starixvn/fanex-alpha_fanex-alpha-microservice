@@ -1,0 +1,112 @@
+﻿.showWarningPT
+{
+    color: Red;
+    display: inline-block;
+    width: 10px;
+}
+.hideWarningPT
+{
+    display: none;
+}
+.masterWidth
+{
+    width: 1024px;
+    padding: 0;
+    margin: 0;
+}
+.custInfoHeader
+{
+    border-bottom: 0; 
+    border-top: 1px solid #ccc;
+}
+.tdWidthSuper
+{
+    width: 263px;
+}
+
+.superAutoPtWidth {
+    width: 167px !important;
+}
+.masterAutoPtWidth {
+    width: 170px;
+}
+
+.tdWidthMember {
+     width: 192px ;
+}
+.headerPositionTaking {
+    background: url(Images/bg_header02.jpg) repeat-x !important;
+    color: white;
+    height: 22px;
+}
+.tableInfo {
+    background-color: #f7f0e4 !important ;
+}
+.btnUpdate, .btnCancel
+{
+	background: url(Images/Update.png) no-repeat;
+	color: #333333;
+    cursor: pointer;
+    height: 22px;
+	border: none;
+	width: 80px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	 padding-left: 2px;
+	 font-weight: bold;
+	 font-size: 12px;
+}
+.btnUpdate:hover, .btnCancel:hover
+{
+	background: url(Images/Update.png) no-repeat 0 -22px;
+}
+.btnUpdateDisabled
+{
+	background: url(Images/Update.png) no-repeat 0 -44px;
+	color: #333333;
+    height: 22px;
+	border: none;
+	width: 80px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+body {
+    background: url("../../../../../_GlobalResources/Images/bg_conts.jpg") repeat-x fixed center top #f5f6f8;
+    margin: 0;
+    padding: 2px;
+    margin-left: 5px;
+}
+   #header_main {
+    background: url("../../../../../_GlobalResources/Images/bg_header01.jpg") no-repeat scroll left bottom rgba(0, 0, 0, 0);
+    color: #9d1c1c;
+    font-weight: bold;
+    height: 22px;
+    line-height: 18px;
+    min-width: 650px;
+    padding-left: 15px;
+    text-transform: uppercase;
+    width: 97%;
+    margin-top: 10px;
+}
+
+.MaskLoadingDiv {
+    background: url("Images/loader3.gif") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    width: 100px; 
+    height: 100px; 
+    position: relative;
+    left: 530px;
+    top: 300px;
+}
+
+.gameTypeWidth {
+    padding: 4px;
+}
+.tdTitleLeft {
+    padding: 4px;
+}
+.tdTitleRight {
+    padding: 4px;
+}
+.memberWidth {
+    width: 390px !important;
+}

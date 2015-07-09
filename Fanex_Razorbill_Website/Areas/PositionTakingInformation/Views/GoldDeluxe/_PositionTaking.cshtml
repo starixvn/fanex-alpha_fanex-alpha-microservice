@@ -1,0 +1,127 @@
+﻿@using Fanex.Razorbill.Module.PositionTaking.Constants;
+@using Fanex.Razorbill.Module.PositionTakingInformation.Utils;
+@{
+    int page = Model.PageIndex;
+    int size = Model.PageSize;
+    int total = Model.TotalPages;
+    
+    string[] wildcards = Model.Wildcards;
+    int wildcardsLength = wildcards.Length;
+    int totalColumns = wildcardsLength == 1 ? 3 : 4;
+}
+
+@helper DisplayPositionTaking(decimal value) {
+    <span>@value.ToString("N2")</span>;
+}
+
+@helper Pagination(int page, int total) {
+    <div class="pagingContainer">
+        @if (page > 1)
+        {
+            <input type="button" class="icon pagingFirst" data-page="1" />
+            <input type="button" class="icon pagingPrev " data-page="@(page - 1)" />
+            <span class="pagingSeperator"></span>
+        }
+        @Resources.Lang.tpage
+        <input type="text" value="@page" maxlength="4" class="pagingCurrent" />@Resources.Lang.of <span class="totalPage">@total</span>
+        @if (page < total)
+        {
+            <span class="pagingSeperator"></span>
+            <input type="button" class="icon pagingNext " data-page="@(page + 1)" />
+            <input type="button" class="icon pagingLast" data-page="@total" />
+        }
+    </div>
+}
+
+<table id="tblHeader" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="bgleft"></td>
+        <td class="bgcenter">
+            <div class="margin-top12">@if (total > 1) { @Pagination(page, total); }</div>
+        </td>
+        <td class="bgright pagingcontrol">
+            <span>@Resources.Lang.pagesize</span>
+            <select id="cbxPageSize">
+                @foreach (int item in new int[] { 10, 50, 100, 500 })
+                {
+                    <option value="@item" @(item == size ? "selected=\"selected\"" : string.Empty)>@item</option>
+                }
+            </select>
+        </td>
+    </tr>
+</table>
+<table id="tblMain" border="1" cellpadding="2" cellspacing="0">
+    <thead>
+        <tr class="RptHeader">
+            <td colspan="@(totalColumns - 1)">&nbsp;</td>
+            <td>@Resources.Lang.GoldDeluxe</td>
+        </tr>
+        <tr>
+            <td class="RptHeader">#</td>
+            <td class="RptHeader">@Resources.Lang.username</td>
+            @if (totalColumns == 4)
+            {
+                <td class="header-lastcolumn">&nbsp;</td>
+            }
+            <td class="header-lastcolumn">@Resources.Lang.GoldDeluxe</td>
+        </tr>
+    </thead>
+    <tbody>
+    @if (total == 0)
+    {
+    <tr>
+        <td colspan="@totalColumns">@Resources.Lang.noInfo</td>
+    </tr>
+    }
+    else
+    {
+        string rowClass;
+        foreach (var goldDeluxe in Model.GoldDeluxes)
+        {
+            if (!goldDeluxe.Enabled)
+            {
+                rowClass = "disabled-row";
+            }
+            else if (goldDeluxe.Closed)
+            {
+                rowClass = "closed-row";
+            }
+            else if (goldDeluxe.Suspended)
+            {
+                rowClass = "suspended-row";
+            }
+            else
+            {
+                rowClass = "even-row";
+            }
+            
+            <tr class="@rowClass">
+                <td rowspan="@wildcardsLength" class="w-order">@goldDeluxe.RowNumber</td>
+                <td rowspan="@wildcardsLength" class="l">
+                    <a href="javascript:;" class="viewDownline" data-custid="@goldDeluxe.CustomerId" data-downline="@Model.DownlineLink">@goldDeluxe.Username</a>
+                </td>
+                @if (wildcardsLength > 1)
+                {
+                    <td class="firstCol">@wildcards[0]</td>
+                }
+                <td>@DisplayPositionTaking(goldDeluxe.PositionTakings[0])</td>
+            </tr>
+            for (int i = 1; i < wildcardsLength; i++)
+            {
+            <tr class="@(rowClass != "even-row" ? @rowClass : (i % 2 == 0 ? "even-row" : "odd-row"))">
+                <td class="firstCol">@wildcards[i]</td>
+                <td>@DisplayPositionTaking(goldDeluxe.PositionTakings[i])</td>    
+            </tr>
+            }
+        }
+    }
+    </tbody>
+    @if (total > 1)
+    {
+        <tfoot>
+            <tr>
+                <td colspan="@totalColumns">@Pagination(page, total)</td>
+            </tr>
+        </tfoot>
+    }        
+</table>

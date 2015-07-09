@@ -1,0 +1,46 @@
+﻿@using Sunplus.Agent.Model.Entities.Permission;
+@model int
+<div id="box_header" style="height:30px;padding-top:7px;width:100%;">
+    <div style="float:left;">
+        <input id="radSportbook" name="rdPositionTaking" type="radio" value="@Resources.Lang.sportBook"
+            onclick="javascript:location.href='@Url.Content("~/_MemberInfo/PositionTakingList/Sportbook/SportbookPositionTakingList.aspx")'"/>
+        <label for="radSportbook">@Resources.Lang.sportBook</label>
+        <input id="radRacing" type="radio" name="rdPositionTaking" value="@Resources.Lang.Racebook"
+            onclick="javascript:location.href='@Url.Content("~/_MemberInfo/PositionTakingList/Racing/RacingPositionTakingList.aspx")'"/>
+        <label for="radRacing">@Resources.Lang.Racebook</label>
+        @if (UserPermission.IsShowNumberGame)
+        {
+            <input id="radNumberGame" type="radio" name="rdPositionTaking" value="@Resources.Lang.numbergame"
+                onclick="javascript:location.href='@Url.Content("~/_MemberInfo/PositionTakingList/NumberGame/NumberGamePositionTakingList.aspx")'"/>
+            <label for="radNumberGame">@Resources.Lang.numbergame</label>
+        }
+        @if (UserPermission.IsShowLiveCasino)
+        {
+            <input id="radLiveCasino" type="radio" name="rdPositionTaking" value="@Resources.Lang.LiveCasino"
+                onclick="javascript:location.href='@Url.Content("~/_MemberInfo/PositionTakingList/LiveCasino/LiveCasinoPositionTakingList.aspx")'"/>
+            <label for="radLiveCasino">@Resources.Lang.LiveCasino</label>
+        }
+        @if (UserPermission.IsShowVirtualSports)
+        {
+            <input id="radVirtualSports" type="radio" name="rdPositionTaking" value="@Resources.Lang.VirtualSports"
+                onclick="javascript:location.href='@Url.Content("~/_MemberInfo/PositionTakingList/VirtualSports/VirtualSportsPositionTakingList.aspx")'"/>
+            <label for="radVirtualSports">@Resources.Lang.VirtualSports</label>
+        }
+        @if (UserPermission.IsShowKenoSetting)
+        {
+            <input id="radKeno" type="radio" name="rdPositionTaking" value="@Resources.Lang.Keno" checked="@(Model == 0 ? "checked" : string.Empty)"
+                 onclick="javascript:location.href='@Url.Content("~/KenoPositionTakingInformation/GetPositionTaking")'"/>
+            <label for="radKeno">@Resources.Lang.Keno</label>
+        }
+        @if (UserPermission.IsShowGoldDeluxeSettingForCredit)
+        {
+            <input id="radGoldDeluxe" type="radio" name="rdPositionTaking" value="@Resources.Lang.GoldDeluxe" checked="@(Model == 1 ? "checked" : string.Empty)"
+                onclick="javascript:location.href='@Url.Content("~/GoldDeluxePositionTaking/Index")'"/>
+            <label for="radGoldDeluxe">@Resources.Lang.GoldDeluxe</label>
+        }
+    </div>
+    <div style="float:right;">
+        <a id="iconBettypesRef" class="infoIco" style="margin-right:5px;height:16px;display:inline-block;"
+            href="@Url.Content("~/PositionTakingInformation/PositionTakingBetTypeReference")" target="_blank" title="@Resources.Lang.ClickToViewPTInfo"></a>
+    </div>
+</div>

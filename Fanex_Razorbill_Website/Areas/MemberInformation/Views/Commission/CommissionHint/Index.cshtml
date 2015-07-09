@@ -1,0 +1,27 @@
+﻿@using Fanex.Razorbill.Module.MemberInformation.Models.Commission
+@using Fanex.Razorbill.Module.MemberInformation.Resources
+@model IEnumerable<CommissionHint>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    @Styles.Render("~/bundles/MemberInformation/Commission/CommissionHintStyles")
+</head>
+<body>
+    <div class="page">
+        <ul>
+        @foreach (var comm in Model)
+        {
+            <li>@Html.Raw(comm.CommissionName) @string.Join(", ", comm.Bettypes).</li>
+        }
+            <li>@Html.Raw(MemberInformationLang.Comm3)</li>
+            <li>@Html.Raw(MemberInformationLang.NumberGameComm)</li>
+            <li>@Html.Raw(MemberInformationLang.HorseRacingFixedOddsComm)</li>
+            <li>@MemberInformationLang.MAP</li>
+        </ul>
+    </div>
+</body>
+</html>

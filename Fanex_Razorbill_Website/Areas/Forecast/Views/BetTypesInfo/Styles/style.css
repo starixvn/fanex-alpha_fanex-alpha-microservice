@@ -1,0 +1,136 @@
+﻿@font-face {
+    font-family: Roboto;
+    src: url(../../../../../App_Themes/Fonts/Roboto/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: "Roboto Light";
+    src: url(../../../../../App_Themes/Fonts/Roboto/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: "Roboto Bold";
+    src: url(../../../../../App_Themes/Fonts/Roboto/Roboto-Bold.ttf);
+}
+@font-face {
+    font-family: "Roboto Medium";
+    src: url(../../../../../App_Themes/Fonts/Roboto/Roboto-Medium.ttf);
+}
+
+html {
+    font-family: "Roboto","Tahoma";
+    font-size: 12px;  
+}
+
+body {
+    background: url("Images/bg.jpg") repeat;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container { padding: 5px; }
+
+.note-box {
+	background: url("Images/bg_boxTop.jpg") repeat-x left bottom #918e91;
+	border: 1px solid #cacaca;
+}
+
+.note-box .note {
+	color: #fff;
+	background: #918e91;
+	border: 1px solid #6f6f6f;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-top: none;
+	font-size: 11px;
+	margin-left: 20px;
+	text-align: center;
+	padding: 2px 0;
+	width: 40px;
+}
+
+.note-box .text-note {
+	padding: 10px 10px 10px 20px;
+}
+
+.content .title {
+    padding: 15px 0 10px 0;
+    font-weight: bold;
+}
+
+.content > p {
+    margin: 0 0 15px;
+}
+
+.bettype-container {
+    width: 100%;
+}
+
+.bettype-container .header {
+	background: #8a888a;
+	color: #fff;
+	cursor: pointer;
+	padding: 5px;
+	border: 1px solid #c2c2c0;
+	text-align: left;
+	font-weight: bold;
+	border-top: none;
+}
+
+.iconBox {
+	text-align: center;
+	font-weight: bold;
+	margin-right: 5px;
+	font-size: 13px;
+	display: inline-block;
+	width: 11px;
+	height: 11px;
+	position: relative;
+	top: 1px;
+	border: 1px solid #c2c2c0;
+}
+
+.collapse-icon {
+    background: url("Images/collapse.png") no-repeat #fff center;
+}
+
+.expand-icon {
+    background: url("Images/expand.png") no-repeat #fff center;
+}
+
+.group-bettype-col {
+	width: 30%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #faf9ee;
+}
+
+table thead {
+	color: #fff;
+	background: #a2a1a2;
+	font-weight: bold;
+	text-align: left;
+}
+
+table thead th {
+	padding: 5px;
+	border: 1px solid #c2c2c0;
+	border-top: none;
+}
+
+table tbody td {
+    padding: 5px;
+    border: 1px solid #c2c2c0;
+}
+
+table tbody td.bettype {
+	background: #ffefde;
+	text-align: left;
+}
+
+.hide {
+    display: none;
+    visibility: hidden;
+}

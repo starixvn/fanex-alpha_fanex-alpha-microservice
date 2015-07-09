@@ -1,0 +1,91 @@
+﻿@using Fanex.Razorbill.Module.MemberInformation.Models.Commission;
+@using Fanex.Razorbill.Module.Common.Enums;
+@using Fanex.Razorbill.Module.Common.Services;
+@using Fanex.Razorbill.Module.MemberInformation.Models.Commission;
+@{
+    Layout = "../_Layout.cshtml";
+    var userRoleInSession = CookielessSession.LoggedInRole;
+}
+@model CommissionReport
+<div id="box-data">
+    <table cellspacing="0" cellpadding="2" border="1" id="tblMain">
+        <thead>
+            <tr class="RptHeader nowrap">
+                <td colspan="4">&nbsp;</td>
+                <td colspan="@(userRoleInSession == LoggedInUserRole.Agent ? 2 : 3)">@Resources.Lang.com 1(%)</td>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="width:30px;" class="RptHeader02">#</td>
+                <td class="RptHeader02">@Resources.Lang.username</td>
+                <td class="RptHeader02">@Resources.Lang.firstname</td>
+                <td class="RptHeader02">@Resources.Lang.lastname</td>
+                @if (userRoleInSession != LoggedInUserRole.Agent)
+                {
+                    <td title="@Resources.Lang.master" class="rptHeaderComm">M</td>
+                }
+                <td title="@Resources.Lang.agent" class="rptHeaderComm">A</td>
+                <td title="@Resources.Lang.member" class="rptHeaderComm">P</td>
+                <td class="RptHeader02">@Resources.Lang.credit</td>
+                <td class="RptHeader02">@Resources.Lang.username</td>
+            </tr>
+        </thead>
+        <tbody>
+        @if (Model.Commissions == null || Model.Commissions.Count() == 0)
+        {
+            <tr class="bg_white">
+                <td colspan="@(userRoleInSession == LoggedInUserRole.Agent ? 8 : 9)">@Resources.Lang.noInfo</td>
+            </tr>
+        }
+        else
+        {
+            int number = 0;
+            string rowClass;
+            foreach (var comm in Model.Commissions)
+            {
+                number++;
+                if (!comm.Enabled)
+                {
+                    rowClass = "disabled-row";
+                }
+                else if (comm.Closed)
+                {
+                    rowClass = "closed-row";
+                }
+                else if (comm.Suspended)
+                {
+                    rowClass = "suspended-row";
+                }
+                else
+                {
+                    rowClass = number % 2 == 0 ? "even-row" : "odd-row";
+                }
+                <tr class="@rowClass">
+                    <td class="w-order">@number</td>
+                    <td class="l">@comm.Username</td>
+                    <td class="l">@comm.Firstname</td>
+                    <td class="l">@comm.Lastname</td>
+                    @if (userRoleInSession != LoggedInUserRole.Agent)
+                    {
+                        <td class="columnComm">@comm.AgentDiscountWithFormat</td>
+                    }
+                    <td class="columnComm">@comm.DiscountWithFormat</td>
+                    <td class="columnComm">@comm.PlayerDiscountWithFormat</td>
+                    <td class="r">@comm.CreditWithFormat</td>
+                    <td class="l">@comm.Username</td>
+                </tr>    
+            }
+        }
+        </tbody>
+    </table>
+</div>
+
+@section script{
+    @Scripts.Render("~/bundles/MemberInformation/Commission/GoldDeluxeScripts")
+    <script type="text/javascript">
+        var goldDeluxeResource = {
+            noInfo: '@Resources.Lang.noInfo',
+            allAgent: '@Resources.Lang.allagent'
+        };
+    </script>
+}

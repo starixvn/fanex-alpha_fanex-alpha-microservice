@@ -1,0 +1,56 @@
+﻿.ptcontainer {
+    margin-left: 3px;
+    width: 625px;
+}
+
+.margin-top12 {
+    margin-top: 12px;
+}
+
+label[for] {
+    cursor: pointer;
+    padding-right: 6px;
+}
+
+#tbl-rpt th, td {
+    padding-left: 3px;
+    padding-right: 3px;
+    white-space: nowrap;
+}
+
+#tblMain {
+    border-collapse: collapse;
+    border-color: #b7b7b7;
+    line-height: 15px;
+    text-align: center;
+    white-space: nowrap;
+    width: 100%;
+}
+
+#tblMain .header-lastcolumn {
+    background-color: #f1e8d2;
+}
+
+#tblMain tbody tr:hover td {
+    background-color: #ffff00;
+}
+
+.odd-row {
+    background-color: #f6f8f9;
+}
+
+.even-row {
+    background-color: #faf9ee;
+}
+
+.closed-row {
+    background-color: #ccc7ba;
+}
+
+.suspended-row {
+    background-color: #f8ded7;
+}
+
+.disabled-row {
+    background-color: #a0a97a;
+}
