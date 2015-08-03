@@ -95,6 +95,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\MicroServices\Legacy\Fanex.Alpha.MicroServices.LegacyModel\Fanex.Alpha.MicroServices.LegacyModel.csproj">
+      <Project>{208A66FE-31E4-4C28-9C4B-DF4ED8FE77FE}</Project>
+      <Name>Fanex.Alpha.MicroServices.LegacyModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Fanex.Age.UI.Components\Fanex.Age.UI.Components.csproj">
       <Project>{AB0F7FCA-F8A6-407F-B9CC-CEF619FD42BE}</Project>
       <Name>Fanex.Age.UI.Components</Name>
@@ -112,7 +116,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>59869</DevelopmentServerPort>
+          <DevelopmentServerPort>64900</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

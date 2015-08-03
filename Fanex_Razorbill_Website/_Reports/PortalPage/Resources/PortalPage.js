@@ -101,6 +101,8 @@ function loadAnnouncement(url, firstRun) {
         setCookie('lastPostTime', '');
         setCookie('moreIsVisible', '');
     }
+
+    url = age.GetBaseUrl().replace('/main/', '/messages/') + '_Reports/PortalPage/' + url;
     jx.request(
         url,
         function (res) {
@@ -284,6 +286,11 @@ function openMsg() {
     window.location.href = baseURL + 'Info/NewMessageForm.aspx?pageQuery=normal';
 }
 
+function openMsgModule() {
+    var baseURL = parent.location.href.substring(0, parent.location.href.lastIndexOf('/') + 1);
+    window.location.href = baseURL.replace('/main/', '/messages/') + 'Info/NewMessageForm.aspx?pageQuery=normal';
+}
+
 var timerID = null;
 
 function hideDiv() {
@@ -372,16 +379,19 @@ function SetReadPriMsg(messageId) {
         }
     }
     params += 'messageId=' + messageId;
-    ajax.PostJSON('SetReadPriMsg.ashx', params, OnComplete, true);
+    //ajax.PostJSON('SetReadPriMsg.ashx', params, OnComplete, true);
+    ajax.PostJSON(age.GetBaseUrl().replace('/main/', '/messages/') + '_Reports/PortalPage/SetReadPriMsg.ashx', params, OnComplete, true);
 }
 var moreIsLoading = false;
 
 function continueExecution() {
     //finish doing things after the pause
     var lastPostTime = getCookie("lastPostTime");
-    var url = location.href;
+    /*var url = location.href;
     url += '?lastPostTime=' + lastPostTime + '&' + _page.key;
-    url = url.replace('PortalPage.aspx', 'Announcement.aspx');
+    url = url.replace('PortalPage.aspx', 'Announcement.aspx');*/
+
+    var url = 'Announcement.aspx?lastPostTime=' + lastPostTime + '&' + _page.key;
     loadAnnouncement(url, false);
     $('divMore').innerHTML = _page.more;
     moreIsLoading = false;

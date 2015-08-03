@@ -31,7 +31,13 @@ var isTimeout = false;
 // age=this is the object of AGE instance
 AGE.prototype.Scrolling = function () {
     try {
-        if (top.main.location.href.indexOf(age.GetBaseUrl()) == -1) {
+        var mainUrl = age.GetBaseUrl();
+        var moduleUrl = top.main.location.href;
+
+        var mainUrlSplit = mainUrl.split('/');
+        var moduleUrlSplit = moduleUrl.split('/');
+
+        if (mainUrlSplit[2] !== moduleUrlSplit[2]) {
             setCookie(_page.CookieCurrentURLKey, '', -1);
             top.location = age.GetBaseUrl();
             isTimeout = true;
@@ -98,7 +104,26 @@ function ChangeLang(lang) {
     ajax.PostJSON('Handlers/SetLanguage.ashx', 'lang=' + lang, OnComplete);
 }
 
+function Change2ViewLog(url) {
+    if (top.menu && top.menu.ClearCurrentLeftMenu) {
+        top.menu.ClearCurrentLeftMenu();
+    }
+
+    top.main.location = age.GetBaseUrl().replace('/main/', '/logs/') + url;
+    SelectTopMenu(url);
+}
+
+function Change2MessageHistory(url) {
+    if (top.menu && top.menu.ClearCurrentLeftMenu) {
+        top.menu.ClearCurrentLeftMenu();
+    }
+
+    top.main.location = age.GetBaseUrl().replace('/main/', '/messages/') + url;
+    SelectTopMenu(url);
+}
+
 function Change2Menu(url) {
+    
     if (top.menu && top.menu.ClearCurrentLeftMenu) {
         top.menu.ClearCurrentLeftMenu();
     }
@@ -232,7 +257,8 @@ function ClockTick() {
 var timeOutId;
 
 function PrivateMsgLink(url) {
-    Change2Menu(url);
+    //Change2Menu(url);
+    Change2MessageHistory(url);
     var open = "(",
         close = ")";
     var countText = $('privateMsgLnk').innerHTML;
@@ -287,7 +313,7 @@ function GetMessages() {
 
             if ((publicMessage[MSGID] != null) && (publicMessageId != publicMessage[MSGID])) {
                 $('topnews').innerHTML = publicMessage[MSGCONTENT];
-                $('text_news_out').onclick = function () { Change2Menu(url); };     // Work with FF, IE6-7
+                $('text_news_out').onclick = function () { Change2MessageHistory(url); };     // Work with FF, IE6-7
                 if (publicMessageId > 0) {
                     balloonPopupContent = publicMessage[MSGCONTENT];
                 }
@@ -316,7 +342,8 @@ function GetMessages() {
         setTimeout(GetMessages, (60 * 1000));
     }
 
-    ajax.PostJSON(age.GetBaseUrl() + '_UserMessage/Handlers/GetMessages.ashx', '', completedGetMessages);
+    //ajax.PostJSON(age.GetBaseUrl() + '_UserMessage/Handlers/GetMessages.ashx', '', completedGetMessages);
+    ajax.PostJSON(age.GetBaseUrl().replace('/main/', '/messages/') + '_UserMessage/Handlers/GetMessages.ashx', '', completedGetMessages);
 }
 
 function ReplaceAll(source, stringToFind, stringToReplace) {
@@ -413,7 +440,7 @@ function InitHeader() {
     SelectTopMenu();
     setTimeout(ReCheckin, 30000);
 
-    
+    console.dir(_page.msgList);
 }
 
 

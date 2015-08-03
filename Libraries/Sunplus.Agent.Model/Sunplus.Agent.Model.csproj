@@ -172,6 +172,7 @@
     <Compile Include="BL\SubAcc\SubAccBO.cs" />
     <Compile Include="BL\Transfer\TransferBO.cs" />
     <Compile Include="Common\AgentIPFormat.cs" />
+    <Compile Include="Common\Language.cs" />
     <Compile Include="DL\BetSetting\BetSettingDAO.cs" />
     <Compile Include="DL\BetSummary\BetSummaryDAO.cs" />
     <Compile Include="DL\Charts\ChartsDAO.cs" />
@@ -189,8 +190,6 @@
     <Compile Include="Entities\BetSummaryEntity.cs" />
     <Compile Include="Entities\CustomerInfo.cs" />
     <Compile Include="Entities\DailyStatementEntity.cs" />
-    <Compile Include="Entities\ExtObject.cs" />
-    <Compile Include="Entities\IExtObject.cs" />
     <Compile Include="Entities\SubAccount.cs" />
     <Compile Include="Security\HttpFrequenceRule.cs" />
     <Compile Include="Services\DeviceService.cs" />
@@ -218,9 +217,7 @@
     <Compile Include="BL\Base\_Extension.cs" />
     <Compile Include="BL\BusinessException\BusinessException.cs" />
     <Compile Include="BL\Cache\CacheRef.cs" />
-    <Compile Include="BL\Definitions\AppSettings.cs" />
     <Compile Include="BL\Definitions\BetType.cs" />
-    <Compile Include="Common\Language.cs" />
     <Compile Include="DL\AccountInfo\AccountInfoDAO.cs" />
     <Compile Include="DL\Authorization\AuthorizationDAO.cs" />
     <Compile Include="DL\BetList\BetListDAO.cs" />
@@ -238,8 +235,6 @@
     <Compile Include="DL\Base\DAOBase.cs" />
     <Compile Include="DL\DataException\DataException.cs" />
     <Compile Include="DL\Definitions\DbTypes.cs" />
-    <Compile Include="Entities\Permission\UserPermission.cs" />
-    <Compile Include="Entities\_Base\IEntity.cs" />
     <Compile Include="Entities\_Base\_Extension.cs" />
   </ItemGroup>
   <ItemGroup>

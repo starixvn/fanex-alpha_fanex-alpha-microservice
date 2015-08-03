@@ -16,6 +16,7 @@
 <%@ Import Namespace="CaptchaMvc.Interface" %>
 <%@ Import Namespace="Fanex.Razorbill.Security.Services.Authentication" %>
 <%@ Import Namespace="Fanex.GoldDeluxe.CoreSetting.Mappings" %>
+<%@ Import Namespace="System.Reflection" %>
 <script RunAt="server">
 
     public static void RegisterRoutes(RouteCollection routes)
@@ -39,6 +40,21 @@
         RegisterRoutes(RouteTable.Routes);
         RegisterGlobalFilters(GlobalFilters.Filters);
         AutoMapperConfiguration.Configure();
+
+        CheatApplicationName();
+    }
+
+
+    private void CheatApplicationName()
+    {
+        string applicationName = "AlphaSite";
+
+        // Change the Application Name in runtime.
+        var runtimeInfo = typeof(HttpRuntime).GetField("_theRuntime", BindingFlags.Static | BindingFlags.NonPublic);
+        var theRuntime = (HttpRuntime)runtimeInfo.GetValue(null);
+        var appNameInfo = typeof(HttpRuntime).GetField("_appDomainAppId", BindingFlags.Instance | BindingFlags.NonPublic);
+
+        appNameInfo.SetValue(theRuntime, applicationName);
     }
     
     private static void RegisterGlobalFilters(GlobalFilterCollection filters)

@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0EDB3255-4440-4D93-8B1E-C2DC33649E33}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fanex.Alpha.MicroServices.Results</RootNamespace>
+    <AssemblyName>Fanex.Alpha.MicroServices.Results</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Fanex.Common">
+      <HintPath>..\..\..\_Dependencies\_FanexLib\Fanex.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanex.Data">
+      <HintPath>..\..\..\_Dependencies\_FanexLib\Fanex.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanex.NAP.Framework">
+      <HintPath>..\..\..\_Dependencies\_FanexLib\Fanex.NAP.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Fanex.Result.Core">
+      <HintPath>..\..\..\_Dependencies\FanexResult\Fanex.Result.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\..\..\_Dependencies\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine">
+      <HintPath>..\..\..\_Dependencies\FanexResult\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\_Dependencies\_Web\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\Lang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lang.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Controllers\ResultController.cs" />
+    <Compile Include="Criteria\GetGoldDeluxePopupResultCriteria.cs" />
+    <Compile Include="Criteria\GetLiveCasinoPopupResultCriteria.cs" />
+    <Compile Include="Criteria\GetNumberGamePopupResultCriteria.cs" />
+    <Compile Include="Criteria\GetNumberGameResultCriteria.cs" />
+    <Compile Include="Criteria\GetOutRightResultCriteria.cs" />
+    <Compile Include="Criteria\GetParlayPopupResultCriteria.cs" />
+    <Compile Include="Criteria\GetRacingPopupResultCriteria.cs" />
+    <Compile Include="Criteria\GetRacingResultCriteria.cs" />
+    <Compile Include="Criteria\GetSportsbookPopupResultCriteria.cs" />
+    <Compile Include="Criteria\GetSportsbookResultCriteria.cs" />
+    <Compile Include="Criteria\GetVirtualRacingResultCriteria.cs" />
+    <Compile Include="Entities\Result.cs" />
+    <Compile Include="Entities\ResultRequest.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Impl\BindingUtilities.cs" />
+    <Compile Include="Repositories\Impl\GoldDeluxePopupResultDataAccess.cs" />
+    <Compile Include="Repositories\Impl\LiveCasinoPopupResultDataAccess.cs" />
+    <Compile Include="Repositories\Impl\NumberGamePopupResultDataAccess.cs" />
+    <Compile Include="Repositories\Impl\NumberGameResultDataAccess.cs" />
+    <Compile Include="Repositories\Impl\OutRightResultDataAccess.cs" />
+    <Compile Include="Repositories\Impl\ParlayPopupResultDataAccess.cs" />
+    <Compile Include="Repositories\Impl\RacingPopupResultDataAccess.cs" />
+    <Compile Include="Repositories\Impl\RacingResultDataAccess.cs" />
+    <Compile Include="Repositories\Impl\SportsbookPopupResultDataAccess.cs" />
+    <Compile Include="Repositories\Impl\SportsbookResultDataAccess.cs" />
+    <Compile Include="Repositories\Impl\VirtualRacingResultDataAccess.cs" />
+    <Compile Include="Repositories\Interface\IGoldDeluxePopupResultDataAccess.cs" />
+    <Compile Include="Repositories\Interface\ILiveCasinoPopupResultDataAccess.cs" />
+    <Compile Include="Repositories\Interface\INumberGamePopupResultDataAccess.cs" />
+    <Compile Include="Repositories\Interface\INumberGameResultDataAccess.cs" />
+    <Compile Include="Repositories\Interface\IOutRightResultDataAccess.cs" />
+    <Compile Include="Repositories\Interface\IParlayPopupResultDataAccess.cs" />
+    <Compile Include="Repositories\Interface\IRacingPopupResultDataAccess.cs" />
+    <Compile Include="Repositories\Interface\IRacingResultDataAccess.cs" />
+    <Compile Include="Repositories\Interface\ISportsbookPopupResultDataAccess.cs" />
+    <Compile Include="Repositories\Interface\ISportsbookResultDataAccess.cs" />
+    <Compile Include="Repositories\Interface\IVirtualRacingResultDataAccess.cs" />
+    <Compile Include="Services\Implement\GoldDeluxePopupResultService.cs" />
+    <Compile Include="Services\Implement\LiveCasinoPopupResultService.cs" />
+    <Compile Include="Services\Implement\NumberGamePopupResultService.cs" />
+    <Compile Include="Services\Implement\NumberGameResultService.cs" />
+    <Compile Include="Services\Implement\OutRightResultService.cs" />
+    <Compile Include="Services\Implement\ParlayPopupResultService.cs" />
+    <Compile Include="Services\Implement\RacingPopupResultService.cs" />
+    <Compile Include="Services\Implement\RacingResultService.cs" />
+    <Compile Include="Services\Implement\SportsbookPopupResultService.cs" />
+    <Compile Include="Services\Implement\SportsbookResultService.cs" />
+    <Compile Include="Services\Implement\VirtualRacingResultService.cs" />
+    <Compile Include="Services\Interface\IGoldDeluxePopupResultService.cs" />
+    <Compile Include="Services\Interface\ILiveCasinoPopupResultService.cs" />
+    <Compile Include="Services\Interface\INumberGamePopupResultService.cs" />
+    <Compile Include="Services\Interface\INumberGameResultService.cs" />
+    <Compile Include="Services\Interface\IOutRightResultService.cs" />
+    <Compile Include="Services\Interface\IParlayPopupResultService.cs" />
+    <Compile Include="Services\Interface\IRacingPopupResultService.cs" />
+    <Compile Include="Services\Interface\IRacingResultService.cs" />
+    <Compile Include="Services\Interface\ISportsbookPopupResultService.cs" />
+    <Compile Include="Services\Interface\ISportsbookResultService.cs" />
+    <Compile Include="Services\Interface\IVirtualRacingResultService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="App_Data\Fanex.Result.Resource\en-US.xml" />
+    <Content Include="App_Data\Fanex.Result.Resource\ja-JP.xml" />
+    <Content Include="App_Data\Fanex.Result.Resource\ko-KR.xml" />
+    <Content Include="App_Data\Fanex.Result.Resource\th-TH.xml" />
+    <Content Include="App_Data\Fanex.Result.Resource\vi-VN.xml" />
+    <Content Include="App_Data\Fanex.Result.Resource\zh-CN.xml" />
+    <Content Include="App_Data\Fanex.Result.Resource\zh-TW.xml" />
+    <Content Include="App_Themes\Fonts\Roboto\LICENSE.txt" />
+    <Content Include="Areas\Security\Views\Styles\howtouse.css" />
+    <Content Include="Areas\Security\Views\Styles\images\bg_buttonsite.jpg" />
+    <Content Include="Areas\Security\Views\Styles\images\bg_buttonsiteOV.jpg" />
+    <Content Include="Areas\Security\Views\Styles\images\bg_conts.jpg" />
+    <Content Include="Areas\Security\Views\Styles\images\bg_header01.jpg" />
+    <Content Include="Areas\Security\Views\Styles\images\bg_header02.jpg" />
+    <Content Include="Areas\Security\Views\Styles\images\emsg_1_1.gif" />
+    <Content Include="Areas\Security\Views\Styles\images\emsg_1_2.gif" />
+    <Content Include="Areas\Security\Views\Styles\images\emsg_1_3.gif" />
+    <Content Include="Areas\Security\Views\Styles\images\emsg_2_1.gif" />
+    <Content Include="Areas\Security\Views\Styles\images\emsg_2_2.gif" />
+    <Content Include="Areas\Security\Views\Styles\images\emsg_3_1.gif" />
+    <Content Include="Areas\Security\Views\Styles\images\emsg_3_2.gif" />
+    <Content Include="Areas\Security\Views\Styles\images\emsg_3_3.gif" />
+    <Content Include="Areas\Security\Views\Styles\images\error.gif" />
+    <Content Include="Areas\Security\Views\Styles\images\success.gif" />
+    <Content Include="Areas\Security\Views\Styles\images\succ_1_1.gif" />
+    <Content Include="Areas\Security\Views\Styles\images\succ_1_2.gif" />
+    <Content Include="Areas\Security\Views\Styles\images\succ_1_3.gif" />
+    <Content Include="Areas\Security\Views\Styles\images\succ_2_1.gif" />
+    <Content Include="Areas\Security\Views\Styles\images\succ_2_2.gif" />
+    <Content Include="Areas\Security\Views\Styles\images\succ_3_1.gif" />
+    <Content Include="Areas\Security\Views\Styles\images\succ_3_2.gif" />
+    <Content Include="Areas\Security\Views\Styles\images\succ_3_3.gif" />
+    <Content Include="Areas\Security\Views\Styles\images\tick.png" />
+    <Content Include="Areas\Security\Views\Styles\images\x5.gif" />
+    <Content Include="Areas\Security\Views\Styles\securityCode.css" />
+    <Content Include="Content\Fanex.Result\fanex.result-customized.css" />
+    <Content Include="Content\Fanex.Result\fanex.result.css" />
+    <Content Include="Content\Fanex.Result\images\bg_header01.jpg" />
+    <Content Include="Content\Fanex.Result\images\bg_header02.jpg" />
+    <Content Include="Content\Fanex.Result\images\bg_header03.jpg" />
+    <Content Include="Content\Fanex.Result\images\bg_header04.jpg" />
+    <Content Include="Content\Fanex.Result\images\goal-icon.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Js\jQuery\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\_Libs\FanexGrid\moment.js" />
+    <Content Include="Views\Result\Scripts\Result.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Configuration\StoreProcedure\DBACC.bodb02.xml" />
+    <Content Include="Web.Configuration\StoreProcedure\DBAGE.bodb02.xml" />
+    <Content Include="Web.Configuration\StoreProcedure\DBAGE.BODB02_DBTXN.CUSTDB.xml" />
+    <Content Include="Web.Configuration\StoreProcedure\DBAGE.bodb_AGE.xml" />
+    <Content Include="Web.Configuration\StoreProcedure\DBARC.bodb_Archive.xml" />
+    <Content Include="Web.Configuration\StoreProcedure\DBCust.CustDB.xml" />
+    <Content Include="Web.Configuration\StoreProcedure\DBCust.IPDB.xml" />
+    <Content Include="Web.Configuration\StoreProcedure\DBLOG.bodb_CustomerLog.xml" />
+    <Content Include="Web.Configuration\StoreProcedure\DBMSG.bodb_Message.xml" />
+    <Content Include="Web.Configuration\StoreProcedure\DBONUSER.ON_USER.xml" />
+    <Content Include="Web.Configuration\StoreProcedure\DBPOLICY.bodb02.xml" />
+    <Content Include="Web.Configuration\StoreProcedure\DBRPT.bodb_report.xml" />
+    <Content Include="Web.Configuration\StoreProcedure\DBTXN.BODB02.xml" />
+    <Content Include="Web.Configuration\StoreProcedure\DBTXN.CustDB.xml" />
+    <Content Include="Web.Configuration\StoreProcedure\ThridParty.xml" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="_BetList\Resources\BetList.css" />
+    <Content Include="_Components\DateRangeSelect\DateRangeSelect.css" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\css\img\cool-bg-hard-inv.png" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\css\img\cool-bg-hard.png" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\css\img\cool-bg-inv.png" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\css\img\cool-bg.png" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\css\img\drop-down.gif" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\css\img\drop-up.gif" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\css\img\nav-left-x2.gif" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\css\img\nav-left.gif" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\css\img\nav-right-x2.gif" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\css\img\nav-right.gif" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\css\img\time-down.png" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\css\img\time-up.png" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\css\jscal2.css" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\css\shadow-b.png" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\css\steel\brushed-steel.jpg" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\css\steel\brushed-steel.png" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\css\steel\coolbg.png" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\css\steel\steel.css" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\css\steel\steel.jpg" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\js\jscal2.js" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\js\lang\ca.js" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\js\lang\cn.js" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\js\lang\cz.js" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\js\lang\de.js" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\js\lang\en.js" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\js\lang\es.js" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\js\lang\fr.js" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\js\lang\it.js" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\js\lang\jp.js" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\js\lang\nl.js" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\js\lang\pl.js" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\js\lang\pt.js" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\js\lang\ro.js" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\js\lang\ru.js" />
+    <Content Include="_Components\DateTimeControl\JSCalendar\js\lang\sv.js" />
+    <Content Include="_GlobalResources\Css\Agent.css" />
+    <Content Include="_GlobalResources\Images\bg_boxTop.jpg" />
+    <Content Include="_GlobalResources\Images\bg_buttonsite.jpg" />
+    <Content Include="_GlobalResources\Images\bg_buttonsiteOV.jpg" />
+    <Content Include="_GlobalResources\Images\bg_conts.jpg" />
+    <Content Include="_GlobalResources\Images\bg_header01.jpg" />
+    <Content Include="_GlobalResources\Images\cal.gif" />
+    <Content Include="_GlobalResources\Images\excel.gif" />
+    <Content Include="_GlobalResources\Images\more.gif" />
+    <Content Include="_Reports\Resources\Reports.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="StoreProcedure\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.Configuration\SecurityCode.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Data\Fanex.Result\Badminton.xls" />
+    <None Include="App_Data\Fanex.Result\BaseBall.xls" />
+    <None Include="App_Data\Fanex.Result\Basketball.xls" />
+    <None Include="App_Data\Fanex.Result\Billiard.xls" />
+    <None Include="App_Data\Fanex.Result\GoldDeluxe.xls" />
+    <None Include="App_Data\Fanex.Result\Hockey.xls" />
+    <None Include="App_Data\Fanex.Result\HorseRacing.xls" />
+    <None Include="App_Data\Fanex.Result\LiveCasino.xls" />
+    <None Include="App_Data\Fanex.Result\NumberGame.xls" />
+    <None Include="App_Data\Fanex.Result\Other.xls" />
+    <None Include="App_Data\Fanex.Result\OtherSport.xls" />
+    <None Include="App_Data\Fanex.Result\Outright.xls" />
+    <None Include="App_Data\Fanex.Result\Racing.xls" />
+    <None Include="App_Data\Fanex.Result\Soccer.xls" />
+    <None Include="App_Data\Fanex.Result\Tennis.xls" />
+    <None Include="App_Data\Fanex.Result\VSHRacing.xls" />
+    <None Include="App_Data\Fanex.Result\VSSpeedWay.xls" />
+    <None Include="App_Data\Fanex.Result\VSTennis.xls" />
+    <None Include="App_Themes\Fonts\Roboto\Roboto-Black.ttf" />
+    <None Include="App_Themes\Fonts\Roboto\Roboto-BlackItalic.ttf" />
+    <None Include="App_Themes\Fonts\Roboto\Roboto-Bold.ttf" />
+    <None Include="App_Themes\Fonts\Roboto\Roboto-BoldItalic.ttf" />
+    <None Include="App_Themes\Fonts\Roboto\Roboto-Italic.ttf" />
+    <None Include="App_Themes\Fonts\Roboto\Roboto-Light.ttf" />
+    <None Include="App_Themes\Fonts\Roboto\Roboto-LightItalic.ttf" />
+    <None Include="App_Themes\Fonts\Roboto\Roboto-Medium.ttf" />
+    <None Include="App_Themes\Fonts\Roboto\Roboto-MediumItalic.ttf" />
+    <None Include="App_Themes\Fonts\Roboto\Roboto-Regular.ttf" />
+    <None Include="App_Themes\Fonts\Roboto\Roboto-Thin.ttf" />
+    <None Include="App_Themes\Fonts\Roboto\Roboto-ThinItalic.ttf" />
+    <Content Include="ConnectionString.config" />
+    <None Include="Content\Fanex.Result\fanex.result.less" />
+    <Content Include="Views\Result\GetResult.cshtml" />
+    <Content Include="Web.Configuration\SpamFilter.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\Fanex.Age.UI.Reports\Fanex.Age.UI.Reports.csproj">
+      <Project>{249C5EE9-5485-49A7-8F50-8D5ABC2EC6B8}</Project>
+      <Name>Fanex.Age.UI.Reports</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Sunplus.Agent.Model\Sunplus.Agent.Model.csproj">
+      <Project>{8831EE6F-7EF9-48F3-9DA2-82C6C5EB6E47}</Project>
+      <Name>Sunplus.Agent.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Modules\Fanex.Razorbill.Module.Core\_Core.csproj">
+      <Project>{AF2E11AA-2A92-47AC-86FA-4D48B0AEB5D7}</Project>
+      <Name>_Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Modules\Fanex.Razorbill.Security\Fanex.Razorbill.Security.csproj">
+      <Project>{95108A2C-7101-44A2-B9C5-3F1B6DB37E8F}</Project>
+      <Name>Fanex.Razorbill.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Legacy\Fanex.Alpha.MicroServices.LegacyModel\Fanex.Alpha.MicroServices.LegacyModel.csproj">
+      <Project>{208A66FE-31E4-4C28-9C4B-DF4ED8FE77FE}</Project>
+      <Name>Fanex.Alpha.MicroServices.LegacyModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Legacy\Fanex.Alpha.MicroServices.LegacySession\Fanex.Alpha.MicroServices.LegacySession.csproj">
+      <Project>{65FC3610-6324-4E80-8A27-61134D711EBD}</Project>
+      <Name>Fanex.Alpha.MicroServices.LegacySession</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Lang.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Lang.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54303</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -47,13 +47,19 @@ function IncreaseAnnoucementShowTimes() {
 }
 
 function LoadAnnouncement() {
-    jx.request('_Announcement/Announcement.aspx', ProcessAnnouncement, 'post', 'id=' + ShowedMessageIds.join(','), true);
+    //jx.request('_Announcement/Announcement.aspx', ProcessAnnouncement, 'post', 'id=' + ShowedMessageIds.join(','), true);
+
+    var url = age.GetBaseUrl().replace('/main/', '/messages/') + '_Announcement/Announcement.aspx';
+    jx.request(url, ProcessAnnouncement, 'post', 'id=' + ShowedMessageIds.join(','), true);
 
     timeoutAnnouncement = setTimeout(RemoveAnnouncement, 120000);
 }
 
 function LoadAnnouncementNext(timeout) {
-    jx.request('_Announcement/Announcement.aspx', ProcessAnnouncement, 'post', 'id=' + ShowedMessageIds.join(',') + '&AnnounmentNext=1', true);
+    //jx.request('_Announcement/Announcement.aspx', ProcessAnnouncement, 'post', 'id=' + ShowedMessageIds.join(',') + '&AnnounmentNext=1', true);
+
+    var url = age.GetBaseUrl().replace('/main/', '/messages/') + '_Announcement/Announcement.aspx';
+    jx.request(url, ProcessAnnouncement, 'post', 'id=' + ShowedMessageIds.join(',') + '&AnnounmentNext=1', true);
 
     if (timeout) {
         timeoutAnnouncementNext = setTimeout(RemoveAnnouncement, timeout);

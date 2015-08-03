@@ -46,7 +46,7 @@ namespace Fanex.Agent.UI
 			public Header_Transfer_Block Transfer = new Header_Transfer_Block();
 			public Header_ChangePwd_Block ChangePwd = new Header_ChangePwd_Block();
 			public Header_Viewlog_Block Viewlog = new Header_Viewlog_Block();
-			protected static string s22 = "</ul><div id=\"clock\"></div></div><div id=\"news_main\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"99%\"><tr><td style=\"width: 99%\"><div id=\"text_news_out\" onclick=\"Change2Menu('Info/NewMessageForm.aspx?pageQuery=";
+			protected static string s22 = "</ul><div id=\"clock\"></div></div><div id=\"news_main\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"99%\"><tr><td style=\"width: 99%\"><div id=\"text_news_out\" onclick=\"Change2MessageHistory('Info/NewMessageForm.aspx?pageQuery=";
 			public string issticky = "{issticky}";
 			protected static string s23 = "', this)\"><div id=\"text_news\" style=\"overflow: hidden; position: relative\"><div id=\"scroller\" style=\"position: absolute; white-space: nowrap; left: 1000px\"><a id=\"topnews\" style=\"overflow: hidden; position: relative\" href=\"javascript:;\">";
 			public string scrollMessage = "{scrollMessage}";
@@ -260,9 +260,11 @@ namespace Fanex.Agent.UI
 
 		public class Header_Viewlog_Block: Block
 		{
-			protected static string s57 = "<li><a id=\"viewlog\" href=\"javascript:Change2Menu('_ViewLog/LogCustomerSetting.aspx?tabid=CustomerSetting')\">";
+			protected static string s57 = "<!--<li><a id=\"viewlog\" href=\"javascript:Change2Menu('_ViewLog/LogCustomerSetting.aspx?tabid=CustomerSetting')\">";
 			protected static string s58{get{return Resources.Lang.viewlog;}}
-			protected static string s59 = "</a></li>";
+			protected static string s59 = "</a></li>--><li><a id=\"viewlog\" href=\"javascript:Change2ViewLog('_ViewLog/LogCustomerSetting.aspx?tabid=CustomerSetting')\">";
+			protected static string s60{get{return Resources.Lang.viewlog;}}
+			protected static string s61 = "</a></li>";
 			public override void ToString(ref StringBuilder bd)
 			{
 				if(!Visible) return;
@@ -271,6 +273,8 @@ namespace Fanex.Agent.UI
 					bd.Append(s57);
 					bd.Append(s58);
 					bd.Append(s59);
+					bd.Append(s60);
+					bd.Append(s61);
 				}
 				if(IsAssigned){bd.Append(Value);}
 			}

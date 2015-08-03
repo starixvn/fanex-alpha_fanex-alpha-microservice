@@ -89,8 +89,7 @@ function change2Menu(url)
     parent.main.location.href = url;
 }
 
-function privateMsgLink(url)
-{
+function privateMsgLink(url) {
     change2Menu(url);
 
     var open = "(", close = ")";
@@ -112,8 +111,7 @@ function completeCountPriMsg(data) {
     }
 }
 
-function updateCountPriMsg()
-{
+function updateCountPriMsg() {
     Ajax.Request("Handlers/UpdateCountPriMsg.ashx",{
         asynchronous:true,
         method:'get',

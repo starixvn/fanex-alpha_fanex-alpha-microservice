@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Fanex.CustomerSetting.Module.KenoStatus">
+      <HintPath>..\..\..\_Dependencies\3rd\Keno\Fanex.CustomerSetting.Module.KenoStatus.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -44,6 +47,7 @@
   <ItemGroup>
     <Compile Include="IUserSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserPermission.cs" />
     <Compile Include="UserSession.cs" />
     <Compile Include="UserSessionBase.cs" />
   </ItemGroup>

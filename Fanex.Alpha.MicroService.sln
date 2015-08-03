@@ -23,7 +23,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Fanex_Razorbill_Website", "
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "61785"
+		VWDPort = "63935"
 		VWDVirtualPath = "/Fanex_Razorbill_Website"
 	EndProjectSection
 EndProject
@@ -102,6 +102,18 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Alpha.MicroServices.LegacyModel", "MicroServices\Legacy\Fanex.Alpha.MicroServices.LegacyModel\Fanex.Alpha.MicroServices.LegacyModel.csproj", "{208A66FE-31E4-4C28-9C4B-DF4ED8FE77FE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Alpha.MicroServices.LegacySession", "MicroServices\Legacy\Fanex.Alpha.MicroServices.LegacySession\Fanex.Alpha.MicroServices.LegacySession.csproj", "{65FC3610-6324-4E80-8A27-61134D711EBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logs", "Logs", "{8BB47E48-81E0-4A5B-BE0D-DC285EC6ADAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Alpha.MicroServices.Logs", "MicroServices\Logs\Fanex.Alpha.MicroServices.Logs\Fanex.Alpha.MicroServices.Logs.csproj", "{F091D66E-296B-44F4-A159-02E440734528}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Messages", "Messages", "{5B7E216D-FAE2-4DB3-82EF-5CFBC4EA7838}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Alpha.MicroServices.Messages", "MicroServices\Messages\Fanex.Alpha.MicroServices.Messages\Fanex.Alpha.MicroServices.Messages.csproj", "{756A860B-FBC4-498B-968D-E71784AB1522}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Results", "Results", "{34705B4A-053B-480A-ABCB-9A610039C5E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fanex.Alpha.MicroServices.Results", "MicroServices\Results\Fanex.Alpha.MicroServices.Results\Fanex.Alpha.MicroServices.Results.csproj", "{0EDB3255-4440-4D93-8B1E-C2DC33649E33}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
@@ -255,6 +267,18 @@ Global
 		{65FC3610-6324-4E80-8A27-61134D711EBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65FC3610-6324-4E80-8A27-61134D711EBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65FC3610-6324-4E80-8A27-61134D711EBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F091D66E-296B-44F4-A159-02E440734528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F091D66E-296B-44F4-A159-02E440734528}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F091D66E-296B-44F4-A159-02E440734528}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F091D66E-296B-44F4-A159-02E440734528}.Release|Any CPU.Build.0 = Release|Any CPU
+		{756A860B-FBC4-498B-968D-E71784AB1522}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{756A860B-FBC4-498B-968D-E71784AB1522}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{756A860B-FBC4-498B-968D-E71784AB1522}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{756A860B-FBC4-498B-968D-E71784AB1522}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EDB3255-4440-4D93-8B1E-C2DC33649E33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EDB3255-4440-4D93-8B1E-C2DC33649E33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EDB3255-4440-4D93-8B1E-C2DC33649E33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EDB3255-4440-4D93-8B1E-C2DC33649E33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -294,7 +318,13 @@ Global
 		{DB53C8B9-5982-4033-9ECB-C1D5426FAAB3} = {6459144B-3428-4EFA-B76E-A222B5974E35}
 		{6044CB14-ACC9-4627-8559-18EE24513585} = {6459144B-3428-4EFA-B76E-A222B5974E35}
 		{DB5D7ED6-C4B5-4E4E-AFE0-9C43C8E62FFD} = {CA6DF73F-4971-4EA4-9BE8-D976344CD0C3}
+		{8BB47E48-81E0-4A5B-BE0D-DC285EC6ADAA} = {CA6DF73F-4971-4EA4-9BE8-D976344CD0C3}
+		{5B7E216D-FAE2-4DB3-82EF-5CFBC4EA7838} = {CA6DF73F-4971-4EA4-9BE8-D976344CD0C3}
+		{34705B4A-053B-480A-ABCB-9A610039C5E5} = {CA6DF73F-4971-4EA4-9BE8-D976344CD0C3}
 		{208A66FE-31E4-4C28-9C4B-DF4ED8FE77FE} = {DB5D7ED6-C4B5-4E4E-AFE0-9C43C8E62FFD}
 		{65FC3610-6324-4E80-8A27-61134D711EBD} = {DB5D7ED6-C4B5-4E4E-AFE0-9C43C8E62FFD}
+		{F091D66E-296B-44F4-A159-02E440734528} = {8BB47E48-81E0-4A5B-BE0D-DC285EC6ADAA}
+		{756A860B-FBC4-498B-968D-E71784AB1522} = {5B7E216D-FAE2-4DB3-82EF-5CFBC4EA7838}
+		{0EDB3255-4440-4D93-8B1E-C2DC33649E33} = {34705B4A-053B-480A-ABCB-9A610039C5E5}
 	EndGlobalSection
 EndGlobal

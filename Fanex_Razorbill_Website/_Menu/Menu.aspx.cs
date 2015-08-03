@@ -281,7 +281,12 @@ namespace Sunplus.Agent.UI._Menu
                 itemBlock.item_title = GetGlobalResourceObject("Lang", menuItem.Title).ToString().Trim();
             }
 
-            if (title.Contains("lblStatement"))
+            if (title.Equals("result", StringComparison.OrdinalIgnoreCase))
+            {
+                //itemBlock.item_url = "../" + (menuItem.GetAttribute("href").Replace("custidParam", CurrentUserSession.CustId.ToString()));
+                itemBlock.item_url = "../../../results/" + menuItem.GetAttribute("href");
+            }
+            else if (title.Contains("lblStatement"))
             {
                 itemBlock.item_url = "../" + (menuItem.GetAttribute("href").Replace("custidParam", CurrentUserSession.CustId.ToString()));
             }
