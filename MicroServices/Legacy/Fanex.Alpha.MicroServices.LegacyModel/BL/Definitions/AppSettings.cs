@@ -819,5 +819,46 @@ namespace Sunplus.Agent.Model.BL.Definitions
         }
         
         #endregion Configurations
+
+        #region Micro services
+
+        public static string MainModule
+        {
+            get
+            {
+                return GetModuleValue("VirtualDirectory");
+            }
+        }
+
+        public static string LogsModule
+        {
+            get
+            {
+                return GetModuleValue("LogsModule");
+            }
+        }
+
+        public static string ResultsModule
+        {
+            get
+            {
+                return GetModuleValue("ResultsModule");
+            }
+        }
+
+        public static string MessagesModule
+        {
+            get
+            {
+                return GetModuleValue("MessagesModule");
+            }
+        }
+
+        private static string GetModuleValue(string module)
+        {
+            return "/" + GetValue(module) + "/";
+        }
+
+        #endregion
     }
 }

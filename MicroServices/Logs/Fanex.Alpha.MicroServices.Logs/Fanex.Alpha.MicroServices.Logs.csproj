@@ -723,6 +723,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Viewlog.resx</DependentUpon>
     </Compile>
+    <Compile Include="App_GlobalResources\Viewlog.th-TH.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Viewlog.th-TH.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Viewlog.vi-VN.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Viewlog.vi-VN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Viewlog.zh-CN.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Viewlog.zh-CN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Viewlog.zh-TW.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Viewlog.zh-TW.resx</DependentUpon>
+    </Compile>
     <Compile Include="Criteria\CheckBelongingByUsernameCriteria.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -857,6 +877,30 @@
     <Content Include="App_GlobalResources\Lang.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>Lang.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Viewlog.vi-VN.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Viewlog.vi-VN.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Viewlog.th-TH.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Viewlog.th-TH.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Viewlog.zh-CN.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Viewlog.zh-CN.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Viewlog.zh-TW.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Viewlog.zh-TW.designer.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
